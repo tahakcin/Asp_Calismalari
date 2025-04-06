@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "sHM8fPPyag8=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\TaHa\\Desktop\\Asp_Calismalari\\CustomRouteHandle\\CustomRouteHandle.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\TaHa\\.nuget\\packages\\magick.net-q16-anycpu\\14.0.0\\magick.net-q16-anycpu.14.0.0.nupkg.sha512",
+    "C:\\Users\\TaHa\\.nuget\\packages\\magick.net.core\\14.0.0\\magick.net.core.14.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,141 @@
+﻿@addTagHelper * , Microsoft.AspNetCore.Mvc.TagHelpers
+@* @model ornek.Models.Product // model kullanarak tag uzerinde model-binding islemi yapılabilir.asp-for direktifi uzerinden fiziksel bir binding islemi saglanir.
+ *@
+
+
+@* <form asp-action="CreateProduct" asp-controller="Product" method="post">
+<!--Eger bir view'de controller girilmezse o view'da bulunan controller baz alinir. asp-controller ile belirtilebilir. -->
+
+<input type="text" name="ProductName" placeholder="Product Name.." />
+<br />
+<input type="number" name="Quantity" placeholder="Quantity.." />
+<br />
+<button>Add Product</button>
+</form> *@
+<!--Bir web uygulamasinda form tetiklendiginde icerisindeki user'la etkilesime girmemizi saglayan 
+	html nesnelerinin degerleri hedef endpoint'e gonderilir.(POST)
+-->
+
+
+@* <form asp-action="CreateProduct" asp-controller="Product"  method="post">
+	<input type="text" asp-for="ProductName" placeholder="Product Name.." />
+	<br />
+	<input type="number" asp-for="Quantity" placeholder="Quantity.."/>
+	<br />
+	<button>Add Product</button>
+	<!--Boylelikle asp-for direktifi ile model yapisi kullanilarak fiziksel binding islemi gerceklestirilmis olur.-->
+
+</form> *@
+
+<!-- #region Tuple Nesnesi POST Etme ve Yakalama-->
+@* @model (ornek.Models.Product product,ornek.Models.User user)
+	<form asp-action="CreateProduct" asp-controller="Product">
+		<input asp-for="product.ProductName" placeholder="Product Name.."/> <br />
+		<input asp-for="product.Quantity" placeholder="Quantity.."/> <br />
+		<input asp-for="user.Name" placeholder="User Name.."/> <br />
+		<input asp-for="user.LastName" placeholder="User Last Name.."/> <br />
+		<input asp-for="user.ID" placeholder="User ID.."/> <br />
+		<!--
+			Eger bind mekanizmasinda tuple turde bir nesne kullanilirsa bu tuple nesne icerisindeki datalar'ın 
+			olusturulup verilmesi, atanması gerekir.'
+		-->
+		<button>Gönder</button>
+	</form> *@
+<!-- #endregion -->
+
+
+
+<!-- #region Validation-->
+@* @model ornek.Models.Client
+
+<form asp-action="CreateProduct" asp-controller="Product" method="post"> <br />
+	
+	<div asp-validation-summary="All" >
+	<!--
+		div tag'i icerisinde bulunan asp-validation-summary direktifi ile form icerisindeki tum validation'lar sonucu 
+		olusan error mesajları goruntulenır.
+	-->
+	</div>	
+	
+	<!--
+		span tag'i icerisindeki asp-validation-for direktifi ile belirtilen property validation icin eger herhangi bir 
+		hata varsa bu check edilir ve yazdirilir.
+	-->
+	
+	<input type="text" asp-for="ClientName" placeholder="Name.." />
+	<span asp-validation-for="ClientName" ></span> <br />
+	
+	<input type="number" asp-for="ClientId" placeholder="Id.." />
+	<span asp-validation-for="ClientId" ></span> <br />
+	
+	<input type="email" asp-for="Email" placeholder="Email.." />
+	<span asp-validation-for="Email" ></span> <br />
+	
+	<button>Gönder</button> 
+
+
+</form> *@
+<!-- #endregion -->
+
+
+<!-- #region Validation with ModelMetadata-->
+@* @model ornek.Models.Customer
+
+<form asp-action="CreateProduct" asp-controller="Product" method="post">
+	<input type="text" asp-for="CustomerName" placeholder="Customer name.." />
+	<span asp-validation-for="CustomerName" ></span> <br />
+
+	<input type="text" asp-for="Id" placeholder="Customer id.." />
+	<span asp-validation-for="Id"></span> <br />
+
+	<input type="email" asp-for="Email" placeholder="Customer email.." />
+	<span asp-validation-for="Email"></span> <br />
+
+	<button>Send</button>
+</form> *@
+<!-- #endregion -->
+
+
+<!-- #region Validation with Fluent Library-->
+@* @model ornek.Models.Client
+
+<form asp-action="CreateProduct" asp-controller="Product" method="post">
+	<input type="text" asp-for="ClientName" placeholder="Client name.." /> 
+	<span asp-validation-for="ClientName"></span> <br />
+
+	<input type="number" asp-for="ClientId" placeholder="Client id.." /> 
+	<span asp-validation-for="ClientId"></span> <br />
+	
+	<input type="email" asp-for="Email" placeholder="Client email.." /> 
+	<span asp-validation-for="Email"></span> <br />
+
+	<button>Gönder</button>
+
+</form> *@
+<!-- #endregion -->
+
+
+<!-- #region Validation in Client-Side -->
+@* @model ornek.Models.Client
+
+<script src="~/jquery/jquery.min.js"></script>
+<script src="~/jquery-validate/jquery.validate.min.js"></script>
+<script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+<form asp-action="CreateProduct" asp-controller="Product"  method="post">
+	<input type="text" asp-for="ClientName" placeholder="Client name.." />
+	<span asp-validation-for="ClientName" ></span> <br />
+
+	<input type="number"  asp-for="ClientId" placeholder="Client id.." />
+	<span asp-validation-for="ClientId" ></span> <br />
+
+	<input type="email" asp-for="Email" placeholder="Client email.." />
+	<span asp-validation-for="Email" ></span> <br />
+
+	<button>Gönder</button>
+
+</form> *@
+<!-- #endregion -->
+
+
+

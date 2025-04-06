@@ -1,0 +1,104 @@
+﻿<!-- #region Model yapisi ile veri tasinmasi -->
+@* @model ornek.Models.ViewModels.UserProduct
+<h3>@Model.Product.ProductName</h3>
+<h3>@Model.User.Name</h3>
+<h3>@Model.User.LastName</h3> *@
+<!-- #endregion -->
+
+<!-- #region Tuple kullanilarak veri tasinmasi -->
+@* @model (ornek.Models.Product p, ornek.Models.User u) // burada tuple nesnesinden gelecek veri belirtilmiş olur.
+<h3>@Model.p.ProductName</h3>
+<h3>@Model.u.Name</h3>
+<h3>@Model.u.LastName</h3> *@
+<!-- #endregion -->
+
+<!-- #region Razor Teknolojisi  -->
+@* <h3>Razor Technology</h3>
+
+@{
+	int a = 38;
+
+	Boolean control = true;
+	if (control)
+	{
+		<text>İfade Doğru</text>
+		<br />
+	}
+	else
+	{
+		<text>İfade Yanlış</text>
+		<br />
+	}
+}
+
+<p>lorem ipsum dolor!</p>
+
+@{
+	if (a == 38)
+	{
+		<text>Değer 38 olarak belirlendi</text>
+	}
+	else
+	{
+		<text>Değer düzgün verilemedi</text>
+	}
+}
+
+<p>33 sayısı 5'e tam bölünür mü?</p>
+<p style="color:darkred">Cevap</p>
+<p>@(33 % 5 == 0 ? "Evet, tam bölünür" : "Hayır, tam bölünmez")</p> *@
+<!-- #endregion -->
+
+
+<!-- #region HtmlPartial -->
+@* @Html.Partial("~/Views/Product/Partials/ListPartial.cshtml", new ornek.Models.Product()) *@
+<!-- #endregion -->
+
+
+<!-- #region HtmlHelper -->
+@using ornek.Extensions
+<!----------------------------HTMLHelper ------------------->
+<!--Bu fonksiyonlar cok kullanilmaz. Sebebi de sunucuya yuk bindirmek olarak aciklanabilir. Biz html olarak bu
+	nesneleri tanımlayabiliriz, boylelikle sunucuya da ek bi islem vermemis oluruz.
+-->
+@* @Html.TextBox("txtName", null, new { style = "background-color: green; color: white;" })
+@Html.CustomTextBox("txtName", null, "Adınız...", "name") *@
+@* @Html.BeginForm("Index","Product",FormMethod.Post) *@
+<!-- #endregion -->
+
+
+<!-- #region TagHelper-->
+@*HtmlHelper'a göre yukarıdaki durumlardan dolayı taghelper tercih edilir.*@
+@addTagHelper * ,Microsoft.AspNetCore.Mvc.TagHelpers
+@*Bu kutuphane eklenemezse eklenen etiketler anlam kazanmaz, sıradan bir attribute veya tag olarak kullanılır.*@
+
+@* <cache>
+	Cache: @DateTime.Now
+</cache>
+<br /> 
+@DateTime.Now
+<form asp-action="Index" asp-controller="Product" method="post">
+	<input type="type" name="name" value="" />
+	<select>
+    <option value="value">text</option>
+	</select>
+</form> *@
+
+
+<!-- #region CustomTagHelper-->
+@addTagHelper * , ornek 
+
+<email mail="muhammettahaakcin@gmail.com" display="Taha Akçin Mail'i"></email>
+
+<welcome Name="Howard"></welcome>
+
+
+<!-- #endregion -->
+
+
+<!-- #endregion -->
+
+
+
+
+

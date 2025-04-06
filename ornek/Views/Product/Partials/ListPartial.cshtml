@@ -1,0 +1,14 @@
+﻿@model ornek.Models.Product
+
+
+<h3>Ürün Listesi</h3>
+<ul>
+    <li>A Product</li>
+    <li>B Product</li>
+    <li>C Product</li>
+</ul>
+@{
+    ornek.Models.Product product = new ornek.Models.Product();
+    product.ProductName = "Alpha Product";
+}
+<p>@product.ProductName</p> 

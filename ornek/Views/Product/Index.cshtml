@@ -1,0 +1,41 @@
+﻿@* @model  List<ornek.Models.Product> // model bazlı veri gönderiminde gelen verinin tipi bu şekilde belirtilmek zorundadır.
+
+<!-- @Model  ifadesi ile de artık gelen datayı kullanabiliriz.-->
+
+<ul>
+    @foreach (var product in Model)
+    {
+        <li>Product Name: @product.ProductName</li>
+    }
+</ul> *@
+
+<h3>ViewBag</h3>
+
+<ul>
+	@foreach (var product in ViewBag.products as List<ornek.Models.Product>) // Buraya eklenen "as List<>" ile kodun havada kalması önlenir.
+																			//ViewBag yapısı dynamic bir yapı olduğu için ViewBag ile tanımlanan ögelerin türleri runtime'da belirlenir.
+																			//Intellisense ve tip güvenliği açısından önem arz eder. Bu kodlar sayesinde derleyici, product değişkeninin Product sınıfına ait özelliklere erişebileceğini bilir.
+	{
+		<li>Product Name: @product.ProductName</li>
+	}
+</ul>
+
+<h3>ViewData</h3>
+<ul>
+
+	@foreach (var product in ViewData["products"] as List<ornek.Models.Product>)
+	{
+		<li>Product Name: @product.ProductName</li>
+	}
+
+</ul>
+
+<h3>TempData</h3>
+<ul>
+
+	@foreach (var product in TempData["products"] as List<ornek.Models.Product>)
+	{
+		<li>Product Name: @product.ProductName</li>
+	}
+
+</ul>

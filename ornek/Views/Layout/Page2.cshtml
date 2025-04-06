@@ -1,0 +1,46 @@
+﻿@* @{
+	Layout = "/Views/Shared/_Layout.cshtml";
+} *@
+
+
+
+
+<h2 class="h4">Welcome to Page2!</h2>
+<p>This is a second page of Layout Example...</p>
+
+@section icerik{
+	<aside class="container my-5">
+	<h3>Sıralama</h3>
+		<ol>
+		<li>
+			Konyaspor		
+		</li>
+
+		<li>
+			Sivasspor
+		</li>
+
+		<li>
+			Adana Demirspor
+		</li>
+
+		</ol>
+		@model ornek.Models.User
+		<form asp-action="Page2" asp-controller="Layout" method="post">
+			<input type="text" asp-for="Name" placeholder="User name.." />
+			<span asp-validation-for="Name" ></span><br />
+
+			<input type="text" asp-for="LastName" placeholder="User last name.." />
+			<span asp-validation-for="LastName" ></span><br />
+
+			<input type="number" asp-for="ID" placeholder="User id.." />
+			<span asp-validation-for="ID" ></span>
+
+			<input type="tel" asp-for="Phone" placeholder="(555)5555555" />
+			<span asp-validation-for="Phone" ></span>
+
+			<button>Send</button>
+		</form>
+
+	</aside>
+}

@@ -1,0 +1,24 @@
+﻿@* @{
+	Layout = "/Views/Shared/_Layout.cshtml";
+} *@
+@model ornek.Models.Client
+
+<h2 class="h4">Welcome to Page1!</h2>
+<p>This is a first page of Layout Example...</p>
+
+@section icerik {
+	<aside class="container my-5">
+		<form asp-action="Page1" asp-controller="Layout" method="post">
+			<input type="text" asp-for="ClientName" placeholder="Müşteri ismi.." />
+			<span asp-validation-for="ClientName"></span> <br />
+
+			<input type="number" asp-for="ClientId" placeholder="Müşteri ID'si..'" />
+			<span asp-validation-for="ClientId"></span> <br />
+
+			<input type="email" asp-for="Email" placeholder="Müşteri email adresi.." />
+			<span asp-validation-for="Email"></span> <br />
+
+			<button>Gönder</button>
+		</form>
+	</aside>
+}

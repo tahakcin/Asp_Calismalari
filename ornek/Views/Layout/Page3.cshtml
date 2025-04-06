@@ -1,0 +1,30 @@
+﻿@* @{
+	Layout = "/Views/Shared/_Layout.cshtml";
+} *@
+
+@{
+	Layout = null;
+}
+<!--
+	Bu tanimlama ile viewstart'daki layout devre disi birakilmis olur.
+	Farklı bir Layout eklenmek isterse path'i belirtilip eklenebilir. Boylece viewstart'dan gelecek layout ezilmis olur.'
+-->
+
+<script src="~/jquery/jquery.min.js"></script>
+<script src="~/jquery-validate/jquery.validate.min.js"></script>
+<script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+
+@model ornek.Models.Product
+<form asp-action="Page3" asp-controller="Layout" >
+	<input type="text" asp-for="ProductName"/>
+	<span asp-validation-for="ProductName" ></span> <br />
+
+	<input type="number" asp-for="Quantity"/>
+	<span asp-validation-for="Quantity" ></span> <br />
+
+	<button>Gönder</button>
+</form>
+
+<h2 class="h4">Welcome to Page3!</h2>
+<p>This is a third page of Layout Example...</p>

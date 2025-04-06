@@ -1,0 +1,104 @@
+﻿@model List<Product>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 mb-4">
+			<div class="card">
+				<img src="/img/fender-custom-shop-1950-double-esquire-super-heavy-relic.jpg"
+					 class="card-img-top img-fluid" alt="Gitar">
+				<div class="card-body">
+					<h5 class="card-title">@Model[0].ProductName</h5>
+					<div class="price text-center rounded bg-dark">
+						<p class="card-text text-light">@Model[0].Price</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 mb-4">
+			<div class="card">
+				<img src="/img/gibson-1959-les-paul-standard-reissue-stanley-10159698.jpg"
+					 class="card-img-top img-fluid" alt="Gitar">
+				<div class="card-body">
+					<h5 class="card-title">@Model[1].ProductName</h5>
+					<div class="price text-center rounded bg-dark">
+						<p class="card-text text-light">@Model[1].Price</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 mb-4">
+			<div class="card">
+				<img src="/img/dw-drums-design-serisi-tobacco-burst-5-parca-davul-seri-.jpg"
+					 class="card-img-top img-fluid" alt="Davul">
+				<div class="card-body">
+					<h5 class="card-title">@Model[2].ProductName</h5>
+					<div class="price text-center rounded bg-dark">
+						<p class="card-text text-light">@Model[2].Price</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 mb-4">
+			<div class="card">
+				<img src="/img/tama-imperialstar-ip52h6w-hbk-hairline-black-22.jpg" class="card-img-top img-fluid"
+					 alt="Davul">
+				<div class="card-body">
+					<h5 class="card-title">@Model[3].ProductName</h5>
+					<div class="price text-center rounded bg-dark">
+						<p class="card-text text-light">@Model[3].Price</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 mb-4">
+			<div class="card">
+				<img src="/img/vivaldi_904.jpg" class="card-img-top img-fluid" alt="Keman">
+				<div class="card-body">
+					<h5 class="card-title">@Model[4].ProductName</h5>
+					<div class="price text-center rounded bg-dark">
+						<p class="card-text text-light">@Model[4].Price</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 mb-4">
+			<div class="card">
+				<img src="/img/thmb_900x900_Kinglos.KinglosAdvancedViolinKLVP03A33264.jpg"
+					 class="card-img-top img-fluid" alt="Keman">
+				<div class="card-body">
+					<h5 class="card-title">@Model[5].ProductName</h5>
+					<div class="price text-center rounded bg-dark">
+						<p class="card-text text-light">@Model[5].Price</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 mb-4">
+			<div class="card">
+				<img src="/img/rolan_rp30.jpg" class="card-img-top img-fluid" alt="Piyano">
+				<div class="card-body">
+					<h5 class="card-title">@Model[6].ProductName</h5>
+					<div class="price text-center rounded bg-dark">
+						<p class="card-text text-light">@Model[6].Price</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 mb-4">
+			<div class="card">
+				<img src="/img/casio-cdp-135bk-dijital-piyano-resim-904.jpg" class="card-img-top img-fluid"
+					 alt="Piyano">
+				<div class="card-body">
+					<h5 class="card-title">@Model[7].ProductName</h5>
+					<div class="price text-center rounded bg-dark">
+						<p class="card-text text-light">@Model[7].Price</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

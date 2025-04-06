@@ -1,0 +1,31 @@
+﻿@addTagHelper * , Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!-- #region IFormCollection-->
+@* <form asp-action="GetData" asp-controller="Product" method="post">
+	<input type="text" name="txtValue1" />
+	<br />
+	<input type="text" name="txtValue2" />
+	<br />
+	<input type="text" name="txtValue3" />
+	<br />
+	<button>Add Product</button>
+</form> *@
+<!-- #endregion -->
+
+<!-- #region Route Yapılanması-->
+@* <a asp-action="Index" asp-controller="Home" asp-route-a="Mehmet" asp-route-b="Erdem" asp-route-id="3908274"
+   asp-route-x="Aklc">Link</a> *@
+<!--route'da olmayan bir parametre girilirse queryString olarak yerlestirilir-->
+<!-- #endregion -->
+
+
+<!-- #region Ajax ile Veri Alma-->
+@* <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<button id="btnGonder">Gönder</button>
+<script>
+	$("#btnGonder").click(() => {
+		$.post("https://localhost:7260/product/getdata", { a: "A Product", b: "B Product" });
+	});
+</script> *@
+<!-- #endregion -->
+
